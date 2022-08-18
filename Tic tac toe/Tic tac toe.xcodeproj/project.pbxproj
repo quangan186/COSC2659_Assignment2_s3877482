@@ -13,6 +13,10 @@
 		2E02508428AE253200699F2F /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E02508328AE253200699F2F /* Leaderboard.swift */; };
 		2E02508628AE256100699F2F /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E02508528AE256100699F2F /* Gameplay.swift */; };
 		2E02508928AE4B1100699F2F /* Instruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E02508828AE4B1100699F2F /* Instruction.swift */; };
+		2E48E3DA28AE854400153710 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E3D928AE854400153710 /* ViewController.swift */; };
+		2E48E3DD28AE903100153710 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E3DC28AE903100153710 /* Board.swift */; };
+		2E48E3DF28AEA46C00153710 /* RoundScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E3DE28AEA46C00153710 /* RoundScore.swift */; };
+		2E48E3E128AEA57000153710 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E48E3E028AEA57000153710 /* Result.swift */; };
 		2E4AA9E128AD27C100D7C0E1 /* Tic_tac_toeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4AA9E028AD27C100D7C0E1 /* Tic_tac_toeApp.swift */; };
 		2E4AA9E328AD27C100D7C0E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4AA9E228AD27C100D7C0E1 /* ContentView.swift */; };
 		2E4AA9E528AD27C300D7C0E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4AA9E428AD27C300D7C0E1 /* Assets.xcassets */; };
@@ -27,6 +31,10 @@
 		2E02508328AE253200699F2F /* Leaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaderboard.swift; sourceTree = "<group>"; };
 		2E02508528AE256100699F2F /* Gameplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
 		2E02508828AE4B1100699F2F /* Instruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instruction.swift; sourceTree = "<group>"; };
+		2E48E3D928AE854400153710 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2E48E3DC28AE903100153710 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		2E48E3DE28AEA46C00153710 /* RoundScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundScore.swift; sourceTree = "<group>"; };
+		2E48E3E028AEA57000153710 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		2E4AA9DD28AD27C100D7C0E1 /* Tic tac toe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tic tac toe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4AA9E028AD27C100D7C0E1 /* Tic_tac_toeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tic_tac_toeApp.swift; sourceTree = "<group>"; };
 		2E4AA9E228AD27C100D7C0E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +57,7 @@
 		2E02507B28ADFB8900699F2F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2E48E3DB28AE902200153710 /* gameplay */,
 				2E02508728AE4AFF00699F2F /* instruction */,
 				2E02507E28ADFBE000699F2F /* menu */,
 			);
@@ -70,6 +79,16 @@
 				2E02508828AE4B1100699F2F /* Instruction.swift */,
 			);
 			path = instruction;
+			sourceTree = "<group>";
+		};
+		2E48E3DB28AE902200153710 /* gameplay */ = {
+			isa = PBXGroup;
+			children = (
+				2E48E3DC28AE903100153710 /* Board.swift */,
+				2E48E3DE28AEA46C00153710 /* RoundScore.swift */,
+				2E48E3E028AEA57000153710 /* Result.swift */,
+			);
+			path = gameplay;
 			sourceTree = "<group>";
 		};
 		2E4AA9D428AD27C100D7C0E1 = {
@@ -97,6 +116,7 @@
 				2E4AA9E228AD27C100D7C0E1 /* ContentView.swift */,
 				2E4AA9E428AD27C300D7C0E1 /* Assets.xcassets */,
 				2E4AA9E628AD27C300D7C0E1 /* Preview Content */,
+				2E48E3D928AE854400153710 /* ViewController.swift */,
 			);
 			path = "Tic tac toe";
 			sourceTree = "<group>";
@@ -190,15 +210,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E48E3DA28AE854400153710 /* ViewController.swift in Sources */,
+				2E48E3E128AEA57000153710 /* Result.swift in Sources */,
 				2E02508928AE4B1100699F2F /* Instruction.swift in Sources */,
 				2E989ACC28AD36500074B9EA /* Menu.swift in Sources */,
 				2E02508628AE256100699F2F /* Gameplay.swift in Sources */,
+				2E48E3DD28AE903100153710 /* Board.swift in Sources */,
 				2E02508228AE251100699F2F /* HowToPlay.swift in Sources */,
 				2E02508028ADFC6D00699F2F /* MenuButtons.swift in Sources */,
 				2E02508428AE253200699F2F /* Leaderboard.swift in Sources */,
 				2E4AA9E328AD27C100D7C0E1 /* ContentView.swift in Sources */,
 				2E02507D28ADFB9800699F2F /* Logo.swift in Sources */,
 				2E4AA9E128AD27C100D7C0E1 /* Tic_tac_toeApp.swift in Sources */,
+				2E48E3DF28AEA46C00153710 /* RoundScore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

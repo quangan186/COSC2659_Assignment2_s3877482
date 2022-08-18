@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView: View{
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color("blue"))]
     }
@@ -21,12 +21,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-extension UIViewController {
-    open override func awakeAfter(using coder: NSCoder) -> Any? {
-        navigationItem.backButtonDisplayMode = .minimal // This will help us to remove text
-        return super.awakeAfter(using: coder)
     }
 }

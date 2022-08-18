@@ -6,12 +6,7 @@
 //
 
 import SwiftUI
-
 struct HowToPlay: View {
-//    init() {
-//
-//        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color("blue"))]
-//             }
     var body: some View {
         ScrollView{
             VStack{
