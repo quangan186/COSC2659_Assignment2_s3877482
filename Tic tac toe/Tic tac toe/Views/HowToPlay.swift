@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct HowToPlay: View {
+//    init() {
+//
+//        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color("blue"))]
+//             }
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView{
+            VStack{
+                Instruction()
+            }.padding(.horizontal).navigationTitle("How to play").environment(\.colorScheme, .dark)
+        }.frame(maxHeight: .infinity, alignment: .top).background(.black)
     }
 }
 
