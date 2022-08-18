@@ -7,18 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E02507D28ADFB9800699F2F /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E02507C28ADFB9800699F2F /* Logo.swift */; };
+		2E02508028ADFC6D00699F2F /* MenuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E02507F28ADFC6D00699F2F /* MenuButtons.swift */; };
+		2E02508228AE251100699F2F /* HowToPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E02508128AE251100699F2F /* HowToPlay.swift */; };
+		2E02508428AE253200699F2F /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E02508328AE253200699F2F /* Leaderboard.swift */; };
+		2E02508628AE256100699F2F /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E02508528AE256100699F2F /* Gameplay.swift */; };
 		2E4AA9E128AD27C100D7C0E1 /* Tic_tac_toeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4AA9E028AD27C100D7C0E1 /* Tic_tac_toeApp.swift */; };
 		2E4AA9E328AD27C100D7C0E1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4AA9E228AD27C100D7C0E1 /* ContentView.swift */; };
 		2E4AA9E528AD27C300D7C0E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4AA9E428AD27C300D7C0E1 /* Assets.xcassets */; };
 		2E4AA9E828AD27C300D7C0E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E4AA9E728AD27C300D7C0E1 /* Preview Assets.xcassets */; };
+		2E989ACC28AD36500074B9EA /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E989ACB28AD36500074B9EA /* Menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E02507C28ADFB9800699F2F /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
+		2E02507F28ADFC6D00699F2F /* MenuButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtons.swift; sourceTree = "<group>"; };
+		2E02508128AE251100699F2F /* HowToPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlay.swift; sourceTree = "<group>"; };
+		2E02508328AE253200699F2F /* Leaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaderboard.swift; sourceTree = "<group>"; };
+		2E02508528AE256100699F2F /* Gameplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
 		2E4AA9DD28AD27C100D7C0E1 /* Tic tac toe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tic tac toe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E4AA9E028AD27C100D7C0E1 /* Tic_tac_toeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tic_tac_toeApp.swift; sourceTree = "<group>"; };
 		2E4AA9E228AD27C100D7C0E1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2E4AA9E428AD27C300D7C0E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E4AA9E728AD27C300D7C0E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2E989ACB28AD36500074B9EA /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +44,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E02507B28ADFB8900699F2F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2E02507E28ADFBE000699F2F /* menu */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2E02507E28ADFBE000699F2F /* menu */ = {
+			isa = PBXGroup;
+			children = (
+				2E02507C28ADFB9800699F2F /* Logo.swift */,
+				2E02507F28ADFC6D00699F2F /* MenuButtons.swift */,
+			);
+			path = menu;
+			sourceTree = "<group>";
+		};
 		2E4AA9D428AD27C100D7C0E1 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +80,8 @@
 		2E4AA9DF28AD27C100D7C0E1 /* Tic tac toe */ = {
 			isa = PBXGroup;
 			children = (
+				2E02507B28ADFB8900699F2F /* Components */,
+				2E989ACA28AD363A0074B9EA /* Views */,
 				2E4AA9E028AD27C100D7C0E1 /* Tic_tac_toeApp.swift */,
 				2E4AA9E228AD27C100D7C0E1 /* ContentView.swift */,
 				2E4AA9E428AD27C300D7C0E1 /* Assets.xcassets */,
@@ -65,6 +96,17 @@
 				2E4AA9E728AD27C300D7C0E1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2E989ACA28AD363A0074B9EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2E989ACB28AD36500074B9EA /* Menu.swift */,
+				2E02508128AE251100699F2F /* HowToPlay.swift */,
+				2E02508328AE253200699F2F /* Leaderboard.swift */,
+				2E02508528AE256100699F2F /* Gameplay.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +179,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E989ACC28AD36500074B9EA /* Menu.swift in Sources */,
+				2E02508628AE256100699F2F /* Gameplay.swift in Sources */,
+				2E02508228AE251100699F2F /* HowToPlay.swift in Sources */,
+				2E02508028ADFC6D00699F2F /* MenuButtons.swift in Sources */,
+				2E02508428AE253200699F2F /* Leaderboard.swift in Sources */,
 				2E4AA9E328AD27C100D7C0E1 /* ContentView.swift in Sources */,
+				2E02507D28ADFB9800699F2F /* Logo.swift in Sources */,
 				2E4AA9E128AD27C100D7C0E1 /* Tic_tac_toeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
