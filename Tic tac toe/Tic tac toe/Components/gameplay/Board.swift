@@ -11,8 +11,7 @@ struct Board: View {
     let column: [GridItem] = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     @State private var moves: [Move?] = Array(repeating: nil, count: 9)
-    @State private var isHumanTurned = true
-    
+    @State private var isGameBoardDisabled = false
     var body: some View {
         GeometryReader{ geometry in
             VStack{
@@ -22,16 +21,22 @@ struct Board: View {
                             Rectangle().frame(width: geometry.size.width/4, height: geometry.size.width/4).border(.white, width: 1)
                             Image(moves[i]? .indicator ?? "").resizable().frame(width: 40, height: 40)
                         }.onTapGesture {
-                            if (isSquareContained(in: moves, forIndex: i)){
+                            if isSquareContained(in: moves, forIndex: i){
                                 return
                             }
-                            moves[i] = Move(player: isHumanTurned ? .user : .bot, boardIndex: i)
-                            isHumanTurned.toggle()
+                            moves[i] = Move(player: .user, boardIndex: i)
+//                            isHumanTurned.toggle()
+                            isGameBoardDisabled = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+                                let botPosition = botMove(in: moves)
+                                moves[botPosition] = Move(player: .bot, boardIndex: botPosition)
+                                isGameBoardDisabled = false
+                            }
                         
                         }
                     }
                 }.padding(40)
-            }
+            }.disabled(isGameBoardDisabled)
         }
     }
     
@@ -39,15 +44,17 @@ struct Board: View {
         return moves.contains(where: {$0?.boardIndex == index})
     }
     
-    func BotMove(in moves: [Move?]) -> Int{
-        var movePosition = Int.random(in: 0 ..< 9)
+    func botMove(in moves: [Move?]) -> Int{
+        var movePosition = Int.random(in: 0..<9)
         while (isSquareContained(in: moves, forIndex: movePosition)){
-            movePosition = Int.random(in: 0 ..< 9)
+            movePosition = Int.random(in: 0..<9)
         }
         return movePosition
     }
     
-
+    func checkResult(){
+        
+    }
 }
 
 enum Player{
