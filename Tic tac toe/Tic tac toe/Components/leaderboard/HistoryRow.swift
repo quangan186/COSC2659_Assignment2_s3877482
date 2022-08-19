@@ -11,8 +11,9 @@ struct HistoryRow: View {
     var historyData: HistoryData
     var body: some View {
         HStack{
-            Text("\(historyData.time)")
+            Text("\(historyData.dateTime)")
+            Spacer()
             Text("\(historyData.score)")
-        }
+        }.padding(.vertical)
     }
 }

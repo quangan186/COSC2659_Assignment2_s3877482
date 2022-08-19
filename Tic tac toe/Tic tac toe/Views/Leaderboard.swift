@@ -9,7 +9,16 @@ import SwiftUI
 
 struct Leaderboard: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView{
+            VStack{
+                HStack{
+                    Text("Date").foregroundColor(Color("blue")).fontWeight(.semibold).font(.custom("Roboto", size: 28))
+                    Spacer()
+                    Text("Score").foregroundColor(Color("red")).fontWeight(.semibold).font(.custom("Roboto", size: 28))
+                }
+                History()
+            }.navigationTitle("Leaderboard").navigationBarTitleDisplayMode(.automatic).padding().foregroundColor(Color.white)
+        }.background(Color.black)
     }
 }
 

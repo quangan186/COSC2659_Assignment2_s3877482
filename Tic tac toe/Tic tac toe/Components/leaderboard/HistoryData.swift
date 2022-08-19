@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct HistoryData: Identifiable, Codable{
-    var time: Date
+struct HistoryData: Identifiable{
+    var id = UUID()
+    var dateTime: String
     var score: Int
 }
