@@ -8,17 +8,15 @@
 import SwiftUI
 
 struct RoundScore: View {
+    @State var round: Int
+    @State var score: Int
+    
     var body: some View {
         HStack{
-            Text("Round: 5").foregroundColor(.white ).font(.custom("Roboto", size: 28)).fontWeight(.semibold)
+            Text("Round: \(round)").foregroundColor(.white ).font(.custom("Roboto", size: 28)).fontWeight(.semibold).padding()
             Spacer()
-            Text("Score: 15").foregroundColor(.white ).font(.custom("Roboto", size: 28)).fontWeight(.semibold)
-        }.padding()
+            Text("Score: \(score)").foregroundColor(.white ).font(.custom("Roboto", size: 28)).fontWeight(.semibold).padding()
+        }
     }
 }
 
-struct RoundScore_Previews: PreviewProvider {
-    static var previews: some View {
-        RoundScore()
-    }
-}

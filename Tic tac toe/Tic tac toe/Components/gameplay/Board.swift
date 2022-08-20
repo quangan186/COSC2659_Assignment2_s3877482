@@ -10,8 +10,10 @@ import SwiftUI
 struct Board: View {
     let column: [GridItem] = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
-    @State private var moves: [Move?] = Array(repeating: nil, count: 9)
+    @Binding var moves: [Move?]
     @State private var isGameBoardDisabled = false
+    @Binding var result: String
+
     var body: some View {
         GeometryReader{ geometry in
             VStack{
@@ -26,52 +28,33 @@ struct Board: View {
                             }
                             moves[i] = Move(player: .user, boardIndex: i)
 //                            isHumanTurned.toggle()
+                            
+                            if checkWinResult(for: .user, in: moves){
+//                                print("User wins")
+                                result = "Win"
+                                return
+                            }
+                            if checkDrawResult(in: moves){
+//                                print("Draw")
+                                result = "Draw"
+                                return
+                            }
+                            
                             isGameBoardDisabled = true
+                            
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
                                 let botPosition = botMove(in: moves)
                                 moves[botPosition] = Move(player: .bot, boardIndex: botPosition)
                                 isGameBoardDisabled = false
+                                if checkWinResult(for: .bot, in: moves){
+                                    result = "Lose"
+                                    return
+                                }
                             }
-                        
                         }
                     }
                 }.padding(40)
             }.disabled(isGameBoardDisabled)
         }
-    }
-    
-    func isSquareContained(in moves: [Move?], forIndex index: Int) -> Bool{
-        return moves.contains(where: {$0?.boardIndex == index})
-    }
-    
-    func botMove(in moves: [Move?]) -> Int{
-        var movePosition = Int.random(in: 0..<9)
-        while (isSquareContained(in: moves, forIndex: movePosition)){
-            movePosition = Int.random(in: 0..<9)
-        }
-        return movePosition
-    }
-    
-    func checkResult(){
-        
-    }
-}
-
-enum Player{
-    case user, bot
-}
-
-struct Move{
-    let player: Player
-    let boardIndex: Int
-    
-    var indicator: String {
-        return player == .user ? "x" : "o"
-    }
-}
-
-struct Board_Previews: PreviewProvider {
-    static var previews: some View {
-        Board()
     }
 }

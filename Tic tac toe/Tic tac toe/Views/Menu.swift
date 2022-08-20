@@ -13,8 +13,8 @@ struct Menu: View {
             VStack{
                 Logo()
                 MenuButtons()
-            }.frame(maxHeight: .infinity, alignment: .top)
-        }.background(Color.black)
+            }.frame(maxHeight: .infinity, alignment: .top).padding(.vertical)
+        }.background(Color.black).navigationBarHidden(true)
     }
 }
 

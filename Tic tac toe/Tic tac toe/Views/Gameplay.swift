@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct Gameplay: View {
+    @State var result = ""
+    @State var moves: [Move?] = Array(repeating: nil, count: 9)
+    @State var round = 1
+    @State var score = 0
     var body: some View {
-        VStack{
-            RoundScore()
-            Board()
-            Result()
-        }.frame(maxHeight: .infinity, alignment: .top).background(.black)
+        ZStack{
+            VStack{
+                RoundScore(round: round, score: score)
+                Board(moves: $moves, result: $result)
+                Result(result: $result, moves: $moves)
+            }.navigationBarHidden(true).frame(maxHeight: .infinity, alignment: .top).padding()
+        }.background(.black)
+        
         
     }
 }

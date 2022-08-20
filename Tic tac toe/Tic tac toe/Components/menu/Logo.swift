@@ -26,7 +26,6 @@ struct Logo: View {
             Text("Toe").foregroundColor(Color("red")).font(.custom("Roboto", size: 100))
             Spacer()
         }
-//        Spacer()
     }
 }
 
