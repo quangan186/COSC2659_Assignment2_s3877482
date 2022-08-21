@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct RoundScore: View {
-    @State var round: Int
-    @State var score: Int
-    
+    var round: Int
+    var score: Int
+    var name: String
     var body: some View {
         HStack{
             Text("Round: \(round)").foregroundColor(.white ).font(.custom("Roboto", size: 28)).fontWeight(.semibold).padding()
+            Spacer()
+            Text(name).foregroundColor(.white ).font(.custom("Roboto", size: 28)).fontWeight(.semibold).padding()
             Spacer()
             Text("Score: \(score)").foregroundColor(.white ).font(.custom("Roboto", size: 28)).fontWeight(.semibold).padding()
         }
     }
 }
-

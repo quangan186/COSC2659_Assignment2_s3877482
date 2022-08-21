@@ -23,6 +23,7 @@
 		2E5123DF28B0C4C900D76988 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5123DE28B0C4C900D76988 /* Player.swift */; };
 		2E5123E228B0C51200D76988 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5123E128B0C51200D76988 /* Move.swift */; };
 		2E5123E628B0C5D800D76988 /* GameFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5123E528B0C5D800D76988 /* GameFunctions.swift */; };
+		2E5EFEA128B25CA0004BCDA5 /* NameRegisterForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5EFEA028B25CA0004BCDA5 /* NameRegisterForm.swift */; };
 		2E989ACC28AD36500074B9EA /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E989ACB28AD36500074B9EA /* Menu.swift */; };
 		2EE6F79928AF148F007B8346 /* HistoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6F79828AF148F007B8346 /* HistoryData.swift */; };
 		2EE6F79F28AF1571007B8346 /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE6F79E28AF1571007B8346 /* HistoryRow.swift */; };
@@ -47,6 +48,7 @@
 		2E5123DE28B0C4C900D76988 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		2E5123E128B0C51200D76988 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 		2E5123E528B0C5D800D76988 /* GameFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFunctions.swift; sourceTree = "<group>"; };
+		2E5EFEA028B25CA0004BCDA5 /* NameRegisterForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameRegisterForm.swift; sourceTree = "<group>"; };
 		2E989ACB28AD36500074B9EA /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		2EE6F79828AF148F007B8346 /* HistoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryData.swift; sourceTree = "<group>"; };
 		2EE6F79E28AF1571007B8346 /* HistoryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 		2E02507B28ADFB8900699F2F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2E5EFE9F28B25C24004BCDA5 /* Form */,
 				2E5123E028B0C50000D76988 /* Model */,
 				2EE6F79728AF13B2007B8346 /* leaderboard */,
 				2E48E3DB28AE902200153710 /* gameplay */,
@@ -149,6 +152,14 @@
 				2E5123E128B0C51200D76988 /* Move.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2E5EFE9F28B25C24004BCDA5 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				2E5EFEA028B25CA0004BCDA5 /* NameRegisterForm.swift */,
+			);
+			path = Form;
 			sourceTree = "<group>";
 		};
 		2E989ACA28AD363A0074B9EA /* Views */ = {
@@ -255,6 +266,7 @@
 				2E02508428AE253200699F2F /* Leaderboard.swift in Sources */,
 				2E4AA9E328AD27C100D7C0E1 /* ContentView.swift in Sources */,
 				2E02507D28ADFB9800699F2F /* Logo.swift in Sources */,
+				2E5EFEA128B25CA0004BCDA5 /* NameRegisterForm.swift in Sources */,
 				2E5123DF28B0C4C900D76988 /* Player.swift in Sources */,
 				2E4AA9E128AD27C100D7C0E1 /* Tic_tac_toeApp.swift in Sources */,
 				2E48E3DF28AEA46C00153710 /* RoundScore.swift in Sources */,

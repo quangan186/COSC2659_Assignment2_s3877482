@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct MenuButtons: View {
+    @Binding var result: String
+    @Binding var moves: [Move?]
+    @Binding var round: Int
+    @Binding var score: Int
+    @Binding var name: String
     var body: some View {
         Spacer()
-        NavigationLink(destination: Gameplay(), label: {
+        NavigationLink(destination: NameRegisterForm(result: $result, moves: $moves, round: $round, score: $score, playerName: $name), label: {
             Text("Play game").fontWeight(.semibold).foregroundColor(Color.white).frame(maxWidth: .infinity, maxHeight:60)
         }).background(Color.blue).cornerRadius(50).padding(.horizontal)
         
@@ -24,11 +29,5 @@ struct MenuButtons: View {
             Text("How to play").fontWeight(.semibold).foregroundColor(Color.white).frame(maxWidth: .infinity, maxHeight:60)
         }).background(Color.blue).cornerRadius(50).padding(.horizontal)
         Spacer()
-    }
-}
-
-struct MenuButtons_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuButtons()
     }
 }
