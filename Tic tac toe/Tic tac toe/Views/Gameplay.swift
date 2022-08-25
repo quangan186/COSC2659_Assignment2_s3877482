@@ -21,7 +21,5 @@ struct Gameplay: View {
                 Result(result: $result, moves: $moves, round: $round, score: $score, name: $playerName)
             }.navigationBarHidden(true).frame(maxHeight: .infinity, alignment: .top).padding()
         }.background(.black)
-        
-        
     }
 }

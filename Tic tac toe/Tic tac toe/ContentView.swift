@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View{
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color("blue"))]
+        playSound(sound: "intro", type: "mp4")
     }
     var body: some View {
         NavigationView{

@@ -13,7 +13,7 @@ struct Board: View {
     @Binding var moves: [Move?]
     @State private var isGameBoardDisabled = false
     @Binding var result: String
-
+    @State var player: Player = .user
     var body: some View {
         GeometryReader{ geometry in
             VStack{
@@ -26,6 +26,7 @@ struct Board: View {
                             if isSquareContained(in: moves, forIndex: i){
                                 return
                             }
+                            
                             moves[i] = Move(player: .user, boardIndex: i)
 //                            isHumanTurned.toggle()
                             
@@ -45,6 +46,7 @@ struct Board: View {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
                                 let botPosition = botMove(in: moves)
                                 moves[botPosition] = Move(player: .bot, boardIndex: botPosition)
+                                playSound(sound: "bot", type: "mp4")
                                 isGameBoardDisabled = false
                                 if checkWinResult(for: .bot, in: moves){
                                     result = "Lose"

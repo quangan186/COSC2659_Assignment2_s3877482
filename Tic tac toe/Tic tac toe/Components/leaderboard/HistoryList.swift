@@ -11,7 +11,7 @@ struct HistoryList: View {
     @ObservedObject var names = Names()
     
     @ObservedObject var scores = Scores()
-//    let data = UserDefaults.standard.object(forKey: "data") as! [HistoryData]
+
     var body: some View {
         HStack{
             VStack{
@@ -30,5 +30,11 @@ struct HistoryList: View {
                 }
             }
         }
+        Button(action: {
+            UserDefaults.standard.removeObject(forKey: "names")
+            UserDefaults.standard.removeObject(forKey: "scores")
+        }, label: {
+            Text("Remove data").foregroundColor(.white)
+        })
     }
 }
