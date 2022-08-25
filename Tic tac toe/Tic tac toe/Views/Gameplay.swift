@@ -18,7 +18,7 @@ struct Gameplay: View {
             VStack{
                 RoundScore(round: round, score: score, name: playerName)
                 Board(moves: $moves, result: $result)
-                Result(result: $result, moves: $moves, round: $round, score: $score)
+                Result(result: $result, moves: $moves, round: $round, score: $score, name: $playerName)
             }.navigationBarHidden(true).frame(maxHeight: .infinity, alignment: .top).padding()
         }.background(.black)
         

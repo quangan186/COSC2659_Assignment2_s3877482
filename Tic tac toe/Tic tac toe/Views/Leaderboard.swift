@@ -12,11 +12,11 @@ struct Leaderboard: View {
         ScrollView{
             VStack{
                 HStack{
-                    Text("Date").foregroundColor(Color("blue")).fontWeight(.semibold).font(.custom("Roboto", size: 28))
+                    Text("Player").foregroundColor(Color("blue")).fontWeight(.semibold).font(.custom("Roboto", size: 28))
                     Spacer()
                     Text("Score").foregroundColor(Color("red")).fontWeight(.semibold).font(.custom("Roboto", size: 28))
                 }
-                History()
+                HistoryList()
             }.navigationTitle("Leaderboard").navigationBarTitleDisplayMode(.automatic).padding().foregroundColor(Color.white)
         }.background(Color.black)
     }
