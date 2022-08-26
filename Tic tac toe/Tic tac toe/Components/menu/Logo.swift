@@ -17,7 +17,7 @@ struct Logo: View {
         }
         
         HStack{
-            Text("Tac").foregroundColor(Color.white).font(.custom("Roboto", size: 100))
+            Text("Tac").foregroundColor(Color("Word")).font(.custom("Roboto", size: 100))
         }
         
         HStack{
@@ -26,11 +26,5 @@ struct Logo: View {
             Text("Toe").foregroundColor(Color("red")).font(.custom("Roboto", size: 100))
             Spacer()
         }
-    }
-}
-
-struct Logo_Previews: PreviewProvider {
-    static var previews: some View {
-        Logo()
     }
 }

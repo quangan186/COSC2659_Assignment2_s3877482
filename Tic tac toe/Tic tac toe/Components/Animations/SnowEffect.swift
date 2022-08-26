@@ -31,7 +31,7 @@ struct SnowEffect: ViewModifier {
               let fillRect = CGRect(
                 origin: point,
                 size: flakeSize)
-                context.fill(Circle().path(in: fillRect), with: .color(.white))
+                context.fill(Circle().path(in: fillRect), with: .color(Color("Word")))
             }
           }
         }

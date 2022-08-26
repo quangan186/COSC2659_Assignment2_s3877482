@@ -13,11 +13,11 @@ struct RoundScore: View {
     var name: String
     var body: some View {
         HStack{
-            Text("Round: \(round)").foregroundColor(.white ).font(.custom("Roboto", size: 28)).fontWeight(.semibold).padding()
+            Text("Round: \(round)").foregroundColor(Color("Word")).font(.custom("Roboto", size: 20)).fontWeight(.semibold).padding()
             Spacer()
-            Text(name).foregroundColor(.white ).font(.custom("Roboto", size: 28)).fontWeight(.semibold).padding()
+            Text(name).foregroundColor(Color("Word")).font(.custom("Roboto", size: 20)).fontWeight(.semibold).padding()
             Spacer()
-            Text("Score: \(score)").foregroundColor(.white ).font(.custom("Roboto", size: 28)).fontWeight(.semibold).padding()
+            Text("Score: \(score)").foregroundColor(Color("Word")).font(.custom("Roboto", size: 20)).fontWeight(.semibold).padding()
         }
     }
 }

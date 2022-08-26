@@ -10,16 +10,30 @@ import SwiftUI
 struct Gameplay: View {
     @State var result = ""
     @State var moves: [Move?] = Array(repeating: nil, count: 9)
+    @State var hardMoves: [Move?] = Array(repeating: nil, count: 25)
     @State var round = 1
     @State var score = 0
     @State var playerName = ""
+    @Binding var easyMode: Bool
+    @Binding var hardMode: Bool
     var body: some View {
         ZStack{
             VStack{
-                RoundScore(round: round, score: score, name: playerName)
-                Board(moves: $moves, result: $result)
-                Result(result: $result, moves: $moves, round: $round, score: $score, name: $playerName)
+                if easyMode {
+                    RoundScore(round: round, score: score, name: playerName)
+                    Board(moves: $moves, result: $result)
+                    Result(result: $result, moves: $moves, round: $round, score: $score, name: $playerName)
+                }
+                
+                if hardMode {
+                    RoundScore(round: round, score: score, name: playerName)
+                    HardBoard(moves: $hardMoves, result: $result)
+                    HardResult(result: $result, moves: $hardMoves, round: $round, score: $score, name: $playerName)
+                }
+                
             }.navigationBarHidden(true).frame(maxHeight: .infinity, alignment: .top).padding()
-        }.background(.black)
+        }.background(Color("Mode")).onAppear(perform: {
+            audioPlayer?.stop()
+        })
     }
 }

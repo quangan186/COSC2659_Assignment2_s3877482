@@ -14,16 +14,14 @@ struct Leaderboard: View {
                 HStack{
                     Text("Player").foregroundColor(Color("blue")).fontWeight(.semibold).font(.custom("Roboto", size: 28))
                     Spacer()
+                    
+                    Text("Mode").foregroundColor(Color("Word")).fontWeight(.semibold).font(.custom("Roboto", size: 28))
+                    Spacer()
+                    
                     Text("Score").foregroundColor(Color("red")).fontWeight(.semibold).font(.custom("Roboto", size: 28))
                 }
                 HistoryList()
-            }.navigationTitle("Leaderboard").navigationBarTitleDisplayMode(.automatic).padding().foregroundColor(Color.white)
-        }.background(Color.black)
-    }
-}
-
-struct Leaderboard_Previews: PreviewProvider {
-    static var previews: some View {
-        Leaderboard()
+            }.navigationTitle("Leaderboard").navigationBarTitleDisplayMode(.automatic).padding().foregroundColor(Color("Word"))
+        }.background(Color("Mode"))
     }
 }

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct Board: View {
-    let column: [GridItem] = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+struct HardBoard: View {
+    let column: [GridItem] = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()),GridItem(.flexible())]
     
     @Binding var moves: [Move?]
     @State private var isGameBoardDisabled = false
@@ -18,25 +18,22 @@ struct Board: View {
         GeometryReader{ geometry in
             VStack{
                 LazyVGrid(columns: column){
-                    ForEach(0 ..< 9){ i in
+                    ForEach(0 ..< 25){ i in
                         ZStack{
-                            Rectangle().frame(width: geometry.size.width/4, height: geometry.size.width/4).border(.white, width: 1)
-                            Image(moves[i]? .indicator ?? "").resizable().frame(width: 40, height: 40)
+                            Rectangle().frame(width: geometry.size.width/6, height: geometry.size.width/6).border(Color("Word"), width: 1)
+                            Image(moves[i]? .indicator ?? "").resizable().frame(width: geometry.size.width/6 - 5, height: geometry.size.width/6 - 5)
                         }.onTapGesture {
                             if isSquareContained(in: moves, forIndex: i){
                                 return
                             }
                             
                             moves[i] = Move(player: .user, boardIndex: i)
-//                            isHumanTurned.toggle()
                             
-                            if checkWinResult(for: .user, in: moves){
-//                                print("User wins")
+                            if checkHardWinResult(for: .user, in: moves){
                                 result = "Win"
                                 return
                             }
-                            if checkDrawResult(in: moves){
-//                                print("Draw")
+                            if checkHardDrawResult(in: moves){
                                 result = "Draw"
                                 return
                             }
@@ -44,18 +41,18 @@ struct Board: View {
                             isGameBoardDisabled = true
                             
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
-                                let botPosition = botMove(in: moves)
+                                let botPosition = botHardModeMove(in: moves)
                                 moves[botPosition] = Move(player: .bot, boardIndex: botPosition)
                                 playSound(sound: "bot", type: "mp4")
                                 isGameBoardDisabled = false
-                                if checkWinResult(for: .bot, in: moves){
+                                if checkHardWinResult(for: .bot, in: moves){
                                     result = "Lose"
                                     return
                                 }
                             }
                         }
                     }
-                }.padding(40)
+                }
             }.disabled(isGameBoardDisabled)
         }
     }

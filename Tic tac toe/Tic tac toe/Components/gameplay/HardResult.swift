@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Result: View {
+struct HardResult: View {
     @Binding var result: String
     @Binding var moves: [Move?]
     @Binding var round: Int
@@ -15,7 +15,7 @@ struct Result: View {
     @Binding var name: String
     @ObservedObject var scores = Scores()
     @ObservedObject var names = Names()
-
+    
     var body: some View {
         VStack{
             Spacer()
@@ -24,7 +24,7 @@ struct Result: View {
                     playSound(sound: "win", type: "mp4")
                 }).modifier(FireworksEffect(numberOfFireworks: 20))
                 Button(action: {
-                    moves = Array(repeating: nil, count: 9)
+                    moves = Array(repeating: nil, count: 25)
                     result = ""
                     round += 1
                     score += 3
@@ -37,7 +37,7 @@ struct Result: View {
                     playSound(sound: "draw", type: "mp4")
                 })
                 Button(action: {
-                    moves = Array(repeating: nil, count: 9)
+                    moves = Array(repeating: nil, count: 25)
                     result = ""
                     round += 1
                     score += 1
@@ -53,7 +53,7 @@ struct Result: View {
                 HStack{
                     Button(action: {
                         names.addName(playerName: PlayerName(name: name))
-                        moves = Array(repeating: nil, count: 9)
+                        moves = Array(repeating: nil, count: 25)
                         result = ""
                         round = 1
                         score = 0

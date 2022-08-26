@@ -12,7 +12,7 @@ struct HowToPlay: View {
             VStack{
                 Instruction()
             }.padding(.horizontal).navigationTitle("How to play").environment(\.colorScheme, .dark)
-        }.frame(maxHeight: .infinity, alignment: .top).background(.black)
+        }.frame(maxHeight: .infinity, alignment: .top).background(Color("Mode"))
     }
 }
 

@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct MenuButtons: View {
-    @State var name = ""
-//    @Binding var historyList: History
+    @Binding var name: String
+    @Binding var modeName: String
+    @Binding var easy: Bool;
+    @Binding var hard: Bool;
     var body: some View {
         Spacer()
-        NavigationLink(destination: NameRegisterForm(name: $name), label: {
+        NavigationLink(destination: NameRegisterForm(name: $name, modeName: modeName, easy: easy, hard: hard), label: {
             Text("Play game").fontWeight(.semibold).foregroundColor(Color.white).frame(maxWidth: .infinity, maxHeight:60)
         }).background(Color.blue).cornerRadius(50).padding(.horizontal)
         
@@ -26,5 +28,9 @@ struct MenuButtons: View {
             Text("How to play").fontWeight(.semibold).foregroundColor(Color.white).frame(maxWidth: .infinity, maxHeight:60)
         }).background(Color.blue).cornerRadius(50).padding(.horizontal)
         Spacer()
+//        NavigationLink(destination: Settings(modeName: $modeName, easy: $easy, hard: $hard), label: {
+//            Text("Settings").fontWeight(.semibold).foregroundColor(Color.white).frame(maxWidth: .infinity, maxHeight:60)
+//        }).background(Color.blue).cornerRadius(50).padding(.horizontal)
+//        Spacer()
     }
 }
