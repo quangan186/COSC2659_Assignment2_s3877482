@@ -41,13 +41,5 @@ struct HistoryList: View {
                 }
             }
         }
-        Button(action: {
-            UserDefaults.standard.removeObject(forKey: "names")
-            UserDefaults.standard.removeObject(forKey: "modes")
-            UserDefaults.standard.removeObject(forKey: "scores")
-            print(modes.modes)
-        }, label: {
-            Text("Remove data").foregroundColor(Color("Word"))
-        })
     }
 }

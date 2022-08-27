@@ -13,9 +13,12 @@ struct Result: View {
     @Binding var round: Int
     @Binding var score: Int
     @Binding var name: String
+    @Binding var modeName: String
+    
     @ObservedObject var scores = Scores()
     @ObservedObject var names = Names()
-
+    @ObservedObject var modes = Modes()
+    
     var body: some View {
         VStack{
             Spacer()
@@ -48,12 +51,14 @@ struct Result: View {
             if result == "Lose"{
                 Text(result).foregroundColor(Color("red") ).font(.custom("Roboto", size: 36)).fontWeight(.semibold).padding(.vertical).onAppear(perform: {
                     scores.addScore(playerScore: PlayerScore(score: score))
+                    modes.addMode(mode: Mode(mode: modeName))
                     playSound(sound: "lose", type: "mp4")
                 }).frame(maxWidth: .infinity).modifier(SnowEffect())
                 HStack{
                     Button(action: {
                         names.addName(playerName: PlayerName(name: name))
                         moves = Array(repeating: nil, count: 9)
+                        audioPlayer?.stop()
                         result = ""
                         round = 1
                         score = 0
