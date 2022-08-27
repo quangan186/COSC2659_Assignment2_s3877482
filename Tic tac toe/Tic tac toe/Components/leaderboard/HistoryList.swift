@@ -19,7 +19,7 @@ struct HistoryList: View {
             VStack{
                 ForEach(names.names, id: \.id){
                     name in
-                    Text("\(name.name)").foregroundColor(Color("Word")).fontWeight(.semibold).padding(.vertical)
+                    Text("\(name.name)").foregroundColor(Color("Word")).padding(.vertical)
                 }
             }
             
@@ -28,7 +28,7 @@ struct HistoryList: View {
             VStack{
                 ForEach(modes.modes, id: \.id ){
                     mode in
-                    Text("\(mode.mode)").foregroundColor(Color("Word")).fontWeight(.semibold).padding(.vertical)
+                    Text("\(mode.mode)").foregroundColor(Color("Word")).padding(.vertical)
                 }
             }
             
@@ -37,7 +37,7 @@ struct HistoryList: View {
             VStack{
                 ForEach(scores.scores, id: \.id ){
                     score in
-                    Text("\(score.score)").foregroundColor(Color("Word")).fontWeight(.semibold).padding(.vertical)
+                    Text("\(score.score)").foregroundColor(Color("Word")).padding(.vertical)
                 }
             }
         }

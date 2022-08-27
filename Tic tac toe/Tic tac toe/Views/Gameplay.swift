@@ -14,18 +14,17 @@ struct Gameplay: View {
     @State var round = 1
     @State var score = 0
     @State var playerName = ""
-    @Binding var easyMode: Bool
-    @Binding var hardMode: Bool
+    @State var modeName = ""
     var body: some View {
         ZStack{
             VStack{
-                if easyMode {
+                if modeName == "Easy" {
                     RoundScore(round: round, score: score, name: playerName)
                     Board(moves: $moves, result: $result)
                     Result(result: $result, moves: $moves, round: $round, score: $score, name: $playerName)
                 }
                 
-                if hardMode {
+                if modeName == "Hard" {
                     RoundScore(round: round, score: score, name: playerName)
                     HardBoard(moves: $hardMoves, result: $result)
                     HardResult(result: $result, moves: $hardMoves, round: $round, score: $score, name: $playerName)

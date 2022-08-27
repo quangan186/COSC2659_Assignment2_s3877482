@@ -56,29 +56,28 @@
 ////    
 ////}
 //
-//import SwiftUI
-//
-//struct Settings: View{
-//    @Binding var modeName: String
-//    @Binding var easy: Bool;
-//    @Binding var hard: Bool;
-//    var body: some View{
-//        HStack{
-//            Button(action: {
-//                easy = true
-//                hard = false
-//                modeName = "Easy"
-//            }, label: {
-//                Text("Easy").foregroundColor(.white).frame(maxWidth: .infinity, maxHeight: 60)
-//            }).background(Color("blue")).cornerRadius(50)
-//            
-//            Button(action: {
-//                easy = false
-//                hard = true
-//                modeName = "Hard"
-//            }, label: {
-//                Text("Hard").foregroundColor(.white).frame(maxWidth: .infinity, maxHeight: 60)
-//            }).background(Color("red")).cornerRadius(50)
-//        }.padding(.vertical)
-//    }
-//}
+import SwiftUI
+
+struct Settings: View{
+    @Binding var modeName: String
+
+    var body: some View{
+        VStack(alignment: .center){
+            Text("Choose Mode").fontWeight(.semibold).foregroundColor(Color("blue")).padding().font(.custom("Roboto", size: 28))
+            HStack{
+                Button(action: {
+                    modeName = "Easy"
+                }, label: {
+                    Text("Easy").foregroundColor(.white).frame(maxWidth: .infinity, maxHeight: 60)
+                }).background(Color("blue")).cornerRadius(50)
+                
+                Button(action: {
+                    modeName = "Hard"
+                }, label: {
+                    Text("Hard").foregroundColor(.white).frame(maxWidth: .infinity, maxHeight: 60)
+                }).background(Color("red")).cornerRadius(50)
+            }.padding()
+        }.frame(maxHeight: .infinity)
+        
+    }
+}

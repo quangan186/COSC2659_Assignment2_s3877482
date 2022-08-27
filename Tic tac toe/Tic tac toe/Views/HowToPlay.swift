@@ -11,7 +11,7 @@ struct HowToPlay: View {
         ScrollView{
             VStack{
                 Instruction()
-            }.padding(.horizontal).navigationTitle("How to play").environment(\.colorScheme, .dark)
+            }.padding(.horizontal).navigationTitle("How to play").foregroundColor(Color("Word"))
         }.frame(maxHeight: .infinity, alignment: .top).background(Color("Mode"))
     }
 }

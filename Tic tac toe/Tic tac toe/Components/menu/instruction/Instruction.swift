@@ -17,9 +17,3 @@ struct Instruction: View {
         Text("- Win gets 3 points, draw gets 1 points").frame(maxWidth: .infinity, alignment: .leading).padding(.vertical)
     }
 }
-
-struct Instruction_Previews: PreviewProvider {
-    static var previews: some View {
-        Instruction()
-    }
-}
