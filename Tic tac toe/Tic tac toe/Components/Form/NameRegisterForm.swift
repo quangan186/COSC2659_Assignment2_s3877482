@@ -1,9 +1,14 @@
-//
-//  NameRegisterForm.swift
-//  Tic tac toe
-//
-//  Created by Bui Quang An on 21/08/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Bui Quang An
+  ID: 3877482
+  Created  date: 21/08/2022
+  Last modified: 28/08/2022
+  Acknowledgement: N/A.
+*/
 
 import SwiftUI
 
@@ -22,6 +27,7 @@ struct NameRegisterForm: View {
                     playSound(sound: "gameplay", type: "mp4")
                 })
                 VStack{
+                    // Input field to type player's name
                     TextField("Type your name", text: $name).padding(.horizontal).frame(height: 60).cornerRadius(48).foregroundColor(Color("Word")).border(Color("Word"), width: 1)
                 }.padding(.horizontal).frame(height: 60).cornerRadius(50)
                 VStack{
@@ -36,6 +42,7 @@ struct NameRegisterForm: View {
             }
         }.frame(maxHeight: .infinity, alignment: .center).background(Color("Mode")).navigationBarHidden(true)
     }
+    // check if input data is valid
     func validInput(name: String) -> Bool {
         if name.isEmpty || name.prefix(1) == " "{
             return false

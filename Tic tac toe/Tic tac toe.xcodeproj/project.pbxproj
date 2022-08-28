@@ -136,6 +136,7 @@
 		2E31957F28B7DBF4007C07F6 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				2E31957D28B7DB82007C07F6 /* Fireworks.swift */,
 				2E31958428B7E182007C07F6 /* SnowEffect.swift */,
 				2E31958028B7DC0D007C07F6 /* FireworksTranslationEffect.swift */,
 			);
@@ -200,7 +201,6 @@
 				2E5123DE28B0C4C900D76988 /* Player.swift */,
 				2EE6F79828AF148F007B8346 /* PlayerName.swift */,
 				2E5123E128B0C51200D76988 /* Move.swift */,
-				2E31957D28B7DB82007C07F6 /* Fireworks.swift */,
 				2E714B8128B90DAC00D21C6A /* GameMode.swift */,
 				2E714B8328B90DCC00D21C6A /* PlayerScore.swift */,
 			);

@@ -1,9 +1,14 @@
-//
-//  Board.swift
-//  Tic tac toe
-//
-//  Created by Bui Quang An on 18/08/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Bui Quang An
+  ID: 3877482
+  Created  date: 18/08/2022
+  Last modified: 28/08/2022
+  Acknowledgement: Youtube.
+*/
 
 import SwiftUI
 
@@ -15,6 +20,7 @@ struct Board: View {
     @Binding var result: String
     @State var player: Player = .user
     var body: some View {
+        // Set up 3x3 board and functions for players and bot
         GeometryReader{ geometry in
             VStack{
                 LazyVGrid(columns: column){

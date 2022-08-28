@@ -1,9 +1,14 @@
-//
-//  Result.swift
-//  Tic tac toe
-//
-//  Created by Bui Quang An on 18/08/2022.
-//
+/*
+  RMIT University Vietnam
+  Course: COSC2659 iOS Development
+  Semester: 2022B
+  Assessment: Assignment 2
+  Author: Bui Quang An
+  ID: 3877482
+  Created  date: 18/08/2022
+  Last modified: 28/08/2022
+  Acknowledgement: Youtube.
+*/
 
 import SwiftUI
 
@@ -22,6 +27,7 @@ struct Result: View {
     var body: some View {
         VStack{
             Spacer()
+            // If players win, the "Continue" button and the fireworks animation will be rendered with the sound effect
             if result == "Win"{
                 Text(result).foregroundColor(Color("blue")).font(.custom("Roboto", size: 36)).fontWeight(.semibold).padding().frame(maxWidth: .infinity).onAppear(perform: {
                     playSound(sound: "win", type: "mp4")
@@ -35,6 +41,7 @@ struct Result: View {
                     Text("Continue").frame(maxWidth: .infinity, maxHeight: 60).foregroundColor(Color.white)
                 }).background(Color("blue")).cornerRadius(50).padding(.vertical)
             }
+            // If players tie, the "Continue" button will be rendered with the sound effect
             if result == "Draw"{
                 Text(result).foregroundColor(Color("Word")).font(.custom("Roboto", size: 36)).fontWeight(.semibold).padding(.vertical).onAppear(perform: {
                     playSound(sound: "draw", type: "mp4")
@@ -48,6 +55,7 @@ struct Result: View {
                     Text("Continue").frame(maxWidth: .infinity, maxHeight: 60).foregroundColor(Color.white)
                 }).background(Color("blue")).cornerRadius(50)
             }
+            // If players lose, the "Try Again" and "Back to menu" buttons and the snow animation will be rendered with the sound effect
             if result == "Lose"{
                 Text(result).foregroundColor(Color("red") ).font(.custom("Roboto", size: 36)).fontWeight(.semibold).padding(.vertical).onAppear(perform: {
                     scores.addScore(playerScore: PlayerScore(score: score))
