@@ -10,26 +10,32 @@ import Foundation
 import UIKit
 
 
-class ModeManagement {
-
-    static let shared = ModeManagement()
-
+class SystemThemeManager {
+    
+    static let shared = SystemThemeManager()
+    
     private init() {
-
+        
     }
-
-    func handleMode(darkMode: Bool, system: Bool) {
+    
+    func handleTheme(darkMode: Bool, system: Bool) {
+        
+        guard !system else {
+            UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .unspecified
+            
+            return
+        }
+        
+        
         UIApplication.shared.windows.first?.overrideUserInterfaceStyle = darkMode ? .dark : .light
     }
-
 }
 
-import SwiftUI
 
 struct Settings: View{
     @Binding var modeName: String
-    @Binding var isDarkMode:Bool
-    @Binding var isUsedSystem:Bool
+    @Binding var darkMode:Bool
+    @Binding var useSystem:Bool
     
     var body: some View{
         VStack(alignment: .center){
@@ -50,14 +56,22 @@ struct Settings: View{
                 }).background(Color("red")).cornerRadius(50)
             }.padding()
             
-            Section(header: Text("Display Settings")) {
-                Toggle(isOn: $isDarkMode, label: {
-                    Text("Dark mode").foregroundColor(Color("Word")).font(.custom("Roboto", size: 20))
-                }).onChange(of: isDarkMode, perform: {_ in
-                    ModeManagement.shared.handleMode(darkMode: isDarkMode, system: isUsedSystem)
-                })
-            }.foregroundColor(Color("blue")).font(.custom("Roboto", size: 28)).padding()
-        }.frame(maxHeight: .infinity).navigationTitle("Choose Mode")
+            Section(header: Text("Display Settings").font(.custom("Roboto", size: 28)).foregroundColor(Color("blue")).fontWeight(.semibold)) {
+                                Toggle(isOn: $darkMode, label: {
+                                    Text("Dark mode")
+                                }).onChange(of: darkMode, perform: {_ in
+                                    SystemThemeManager.shared.handleTheme(darkMode: darkMode, system: useSystem)
+                                })
+                                
+                                Toggle(isOn: $useSystem, label: {
+                                    Text("Use system settings")
+                                }).onChange(of: useSystem, perform: {_ in
+                                    SystemThemeManager.shared.handleTheme(darkMode: darkMode, system: useSystem)
+                                })
+            }.padding()
+                        }
+                    }
+                }
         
-    }
-}
+    
+
